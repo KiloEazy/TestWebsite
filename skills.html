@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<!--Used for accessability reasons-->
+<html lang="en-us" dir="ltr">
+<head>
+    <!--Head section - including meta and title-->
+    <meta charset="UTF-8">
+    <!--Used for SEO-->
+    <meta name="keywords" content="HTML">
+    <meta name="description" content="Kaleb E - A Personal Biography Page">    
+    <!--Used for visability of web page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css-new.css">
+    <title>Kaleb E's Website</title>
+</head>
+<body>
+    <main>
+        <!-- Nav Bar -->
+        <header>
+            <div class="header" id="mainHeader">
+                <div class="title" id="nameHeader">
+                    <!-- Start Name Banner -->
+                    <table>
+                        <tr>
+                            <td><img src="img/me.jpg" class="meImage"></td>
+                            <td><span class="largeText">Kaleb Essig</span></td>
+                        </tr>
+                    </table>
+                    <!-- End Name Banner -->
+                    <!--Start Nav Bar-->
+                    <div class="navBar">
+                        <a href="index.html">Home</a>
+                        <a href="resume.html">Resume</a>
+                        <a class="activelink" href="skills.html">Skills</a>
+                        <a href="hobbies.html">Hobbies</a>
+                        <a href="contact.html">Contact Me!</a>
+                    </div> 
+                    <!-- End Nav Bar--> 
+                </div>                
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="otherIntro">
+                <h1>Skill Showcase</h1> 
+                <p>This page is to showcase some of my skills related to databases. In particular, I will be show the basics of
+                    running commands in a database such as creating a table, inserting data and querying this information. 
+                </p>
+            </div>
+            <div class="contentSection">
+                <div class="sql">
+                    <h2>Creating Tables and Inserting Data:</h2>
+                    <p>The first step in creating a functioning database is to create a table. Tables are where data is stored and can be queried from. Key components of a database include:</p>
+                    <ul>
+                        <li>Determining table name (in this case we are using <span class="txtEdit">users and info</span>)</li>
+                        <li>Column name (indicated in the parentheses, such as <span class="txtEdit"> id or first_name</span>)</li>
+                        <li>Data types (followed after column name - examples are <span class="txtEdit">varchar and int</span>)</li>
+                    </ul>
+                    <h3>Code:</h3>
+                    <code>
+                        CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT, first_name varchar NOT NULL , last_name varchar NOT NULL , age int (3), location char(2), favorite_food varchar);                </code>
+                    <code>
+                        CREATE TABLE info (idNum NOT NULL, car_manufact VARCHAR, car_type VARCHAR, car_color VARCHAR, FOREIGN KEY (idNum) REFERENCES users (id));
+                    </code>
+                    <h3>Output:</h3>
+                    <p>After the above code is ran, we can see the table is created with columns, however, no data:</p>
+                    <img id="imgZoom" src="img/output1.png">
+                    <p>Now that the tables are created, we can now insert data into the tables:</p>
+                    <h3>Code:</h3>
+                    <code>
+                        INSERT INTO users (first_name, last_name, age, location, favorite_food)
+                        VALUES('Joe', 'Smith','21','CO','Pizza'),('George', 'Allen','35','CO','Pasta'),('Josh', 'Corbin','42','TX','BBQ'),('Hazel', 'Roth','25','CA','Sushi'),('Rose', 'Smith','27','AL','Pizza'),('Jonnie', 'Adams','39','CA','BBQ');
+                    </code>
+                    <code>
+                        INSERT INTO info (idNum, car_manufact, car_type, car_color) VALUES('1', 'Honda','Sedan','Black'),('2', 'Honda','Coupe','Red'),('3', 'Mazda','SUV','Red'),('4', 'Ford','Truck','Grey'),('5', 'Dodge','Minivan','Blue'),
+                        ('6', 'Mitsubishi','Coupe','Orange');
+                    </code>
+                    <p>In order to see if the data successfully was inserted into the tables, we can use the following code to query the data:</p>
+                    <code>
+                        SELECT * FROM users;
+                        <br>SELECT * FROM info;
+                    </code>
+                    <p>This will now show the output of our inserted data:</p>
+                    <h3>Output:</h3>
+                    <img id="imgZoom" src="img/output2.png">
+                    <img id="imgZoom" src="img/output3.png">
+                    <p>You can also use clauses and logical operators to filter your query searches. Below, I have provided some examples.</p>
+                    <h3>WHERE and LIKE clause</h3>
+                    <p>These clauses can help narrow down our query. The WHERE clause is our identifier and the LIKE clause helps find matchs.</p>
+                    <code>
+                        SELECT * FROM users WHERE first_name LIKE 'J%';
+                    </code>
+                    <p>This SQL script will show us all first_names that start with the letter "J"</p>
+                    <h3>Output:</h3>
+                    <img id="imgZoom" src="img/output4.png">
+                    <h3>Logical Operators</h3>
+                    <p>Logical operators can also be used to filter our queries. Below, I will be using the less than logical operator to filer our search.</p>
+                    <h3>Code:</h3>
+                    <code>
+                        SELECT * FROM users WHERE age < '30';
+                    </code>
+                    <p>This SQL script shows us all individuals who has an age less than 30.</p>
+                    <img id="imgZoom" src="img/output5.png">
+                    <h3>Table Joines</h3>
+                    <p>The last item I am showing is how to join tables together. This is important when trying to match data together.</p>
+                    <h3>Code:</h3>
+                    <code>
+                        SELECT id, first_name AS FirstName, last_name AS LastName, car_manufact, car_type, car_color  FROM users INNER JOIN info ON info.idNum = users.id;
+                    </code>
+                    <h3>Output:</h3>
+                    <img id="imgZoom" src="img/output6.png">
+                    <p>As one can see, we have joined both the users and info table, based on the criteria listed in the SELECT clause.</p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="foot">
+                <sup>&copy;</sup> Created By KE Studio's - Kaleb Essig - 2020
+            </div>
+        </footer>
+        
+    </main>
+</body>
+</html>
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--Used for accessability reasons-->
+<html lang="en-us" dir="ltr">
+<head>
+    <!--Head section - including meta and title-->
+    <meta charset="UTF-8">
+    <!--Used for SEO-->
+    <meta name="keywords" content="HTML">
+    <meta name="description" content="Kaleb E - A Personal Biography Page">    
+    <!--Used for visability of web page-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css-new.css">
+    <title>Kaleb E's Website</title>
+</head>
+<body>
+    <main>
+        <!-- Nav Bar -->
+        <header>
+            <div class="header" id="mainHeader">
+                <div class="title" id="nameHeader">
+                    <!-- Start Name Banner -->
+                    <table>
+                        <tr>
+                            <td><img src="img/me.jpg" class="meImage"></td>
+                            <td><span class="largeText">Kaleb Essig</span></td>
+                        </tr>
+                    </table>
+                    <!-- End Name Banner -->
+                    <!--Start Nav Bar-->
+                    <div class="navBar">
+                        <a href="index.html">Home</a>
+                        <a href="resume.html">Resume</a>
+                        <a href="skills.html">Skills</a>
+                        <a href="hobbies.html">Hobbies</a>
+                        <a class="activelink" href="contact.html">Contact Me!</a>
+                    </div> 
+                    <!-- End Nav Bar--> 
+                </div>                
+            </div>
+        </header>
+
+        <section class="content">
+            <div class="intro">
+                <h1>Contact Me</h1> 
+            </div>
+            <script>
+                function submissionConfirmation() {
+                  alert("Thanks For Visiting My Website! You will now be redirected to the home page.");
+                }
+                </script>
+            <div class="contentSection">
+                <span id="contactP">
+                <p>Have a question, comment or feedback for me? Please submit your information below and I'll get back to you!</p>
+                </span>
+                <div class="contactForm">
+                    <form onsubmit="submissionConfirmation()" action="index.html">
+                        <label>
+                            <span id="formTitle">Name:</span><input type="text" NAME="Name" size="25">
+                        </label>
+                        <label>
+                            <span id="formTitle">Email:</span><input type="email" NAME="Email" size="25">
+                        </label>
+                        <label>
+                            <span id="formTitle">Phone:</span><input type="tel" NAME="Phone" size="25">
+                        </label>
+                        <label>
+                            <span id="formTitle">Preferred Contact Method:</span><select NAME="Preferred Contact">
+                                <option disabled selected value>Please Select an Option</option>
+                                <option value="Email">Email</option>
+                                <option value="Call">Call</option>
+                                <option value="Text">Text</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span id="formTitle">Feedback:</span><textarea NAME="Feedback" size="25" rows="10"></textarea>
+                        </label>
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
+                <div class="contactFoot">
+                    <h3 id="contactHead">You Can Also Check Me Out On:</h3>
+                    <a href="https://www.instagram.com/kcheeazy/">
+                    <button id="instaButton"></button></a>
+                    <a href="https://www.linkedin.com/in/kalebessig">
+                    <button id="linkedinButton"></button></a>
+                </div>
+            </div>
+        </section>
+       
+        <footer>
+            <div class="foot">
+                <sup>&copy;</sup> Created By KE Studio's - Kaleb Essig - 2020
+            </div>
+        </footer>
+        
+    </main>
+</body>
+</html>
+
+
